@@ -5,15 +5,14 @@ Text: Arifu
 Response:
 Message with options
 
-Components
+### Components
 - Frontend - SMS
 - Shortcode gateway
 - Load balancer
 - App servers - Api
 - Database cluster
 
-
-Flow:
+### Flow:
 - User sends the text "Arifu" to 22744
 - Telco receives the text
 - Telco forwards it to the Shortcode gateway who then forwards it to the load balancer or if the connection is direct then the Telco forwards it directly to the load balancer
@@ -26,7 +25,7 @@ Flow:
 - The Shortcode gateway then forwards the response to the user's device
 
 
-Api:
+### Api:
 	Flask:
 		- Flask-Restful - for the Api
 		- SQLAlchemy - for Db access
@@ -77,9 +76,10 @@ Api:
 
 
 
-Database:
+### Database:
 	Could use PostgreSQl/MongoDb(to store sessions) + Redis(to store mappings to responses)
 	At the simplest, the PostgreSQl schema would look something like:
+		
 		Users
 			- id - maybe a uuid
 			- phone_number
